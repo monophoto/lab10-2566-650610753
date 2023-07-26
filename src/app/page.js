@@ -1,5 +1,6 @@
 "use client";
 
+import { UserCard } from "@/components/UserCard";
 import { cleanUser } from "@/libs/cleanUser";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -10,8 +11,8 @@ export default function RandomUserPage() {
   const [users, setUsers] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [genAmount, setGenAmount] = useState(1);
-
   const [isFirst, setIsFirst] = useState(true);
+
   const generateBtnOnClick = async () => {
     setIsLoading(true);
     const resp = await axios.get(
